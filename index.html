@@ -1,44 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
   <title>Frontend Mentor | Tip calculator app</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
+
 <body>
+  <header>
+    <h1>SPLITTER</h1>
+  </header>
+  <main>
+    <div class="customs">
+      <label for="" class="sectionTitle">
+        Bill
+        <input type="decimal" class="amount billAmount" min="1" data-name="amount">
+        <p class="errorInput" aria-live="polite"></p>
+      </label>
 
-  Bill
+      <p class="sectionTitle">Select Tip %</p>
+      <ul class="tipBtns round">
+        <li class="tipBtn activeBtn" data-tip="5">5%</li>
+        <li class="tipBtn" data-tip="10">10%</li>
+        <li class="tipBtn" data-tip="15">15%</li>
+        <li class="tipBtn" data-tip="25">25%</li>
+        <li class="tipBtn" data-tip="50">50%</li>
+        <li class="customBtn">Custom</li>
+        <input type="number" class="customTip tip hidden" min="0" value="" data-tip="customTip">
+      </ul>
 
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
+      <label for="" class="sectionTitle">
+        Number of People
+        <input type="number" class="people" min="1" value="" data-name="people">
+        <p class="errorInput" aria-live="polite"></p>
+      </label>
+    </div>
 
-  Number of People
+    <div class="total round">
+      <div class="subTotal">
+        <p class="title">Tip Amount</p>
+        <p class="subTitle">/ person</p>
+      </div>
+      <div class="tipPerPerson totalAmount">$0.00</div>
+      <div class="subTotal">
+        <p class="title">Total</p>
+        <p class="subTitle">/ person</p>
+      </div>
+      <div class="totalPerPerson totalAmount">$0.00</div>
+      <button class="resetBtn">Reset</button>
+    </div>
 
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  </main>
+  <script src="./script.js"></script>
 </body>
+
 </html>
